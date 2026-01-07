@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@400;600;800&display=swap');
+
+:root {
+    --primary-font: 'Inter', sans-serif;
+    --heading-font: 'Outfit', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: var(--primary-font);
+    background-color: #000;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('./Images/Coding.jpg') center center / cover no-repeat;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 60px;
+}
+
+
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    text-transform: none;
+}
+
+
+.center-content {
+    text-align: center;
+}
+
+.main-title {
+    font-family: var(--heading-font);
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 800;
+    line-height: 0.85;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    white-space: nowrap;
+    color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.center-content:hover .main-title {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.sub-title {
+    font-family: var(--heading-font);
+    font-size: clamp(1.2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin: 5px 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+
+.bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding-bottom: 10px;
+}
+
+.contact-info {
+    text-align: center;
+    display: flex;
+    gap: 40px;
+}
+
+.phone-number {
+    text-align: right;
+}
+
+.user-name {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.intro-page {
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 60px;
+    overflow: hidden;
+}
+
+.intro-content, .personal-content, .skills-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex: 1;
+}
+
+.intro-title, .personal-title, .skills-heading, .project-title-large {
+    font-family: var(--heading-font);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 0.85;
+    margin-bottom: 20px;
+    text-transform: lowercase;
+}
+
+.project-title-large {
+    font-size: clamp(4rem, 10vw, 8rem);
+    letter-spacing: -2px;
+}
+
+.intro-desc {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 500px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+.layout-left-img {
+    flex-direction: row-reverse;
+}
+
+.layout-right-img {
+    flex-direction: row;
+}
+
+.layout-work {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-areas: 
+        "left right"
+        "back right";
+    gap: 40px;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.work-left { grid-area: left; display: flex; flex-direction: column; }
+.work-right { grid-area: right; }
+.work-back-container { grid-area: back; margin-top: -20px; }
+
+.layout-project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+.project-img-top {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    width: 25%;
+    height: 25vh;
+    object-fit: cover;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
+}
+
+.project-img-bottom {
+    position: absolute;
+    bottom: 80px;
+    right: 40px;
+    width: 20%;
+    height: 20vh;
+    object-fit: cover;
+    box-shadow: -20px -20px 60px rgba(0,0,0,0.05);
+}
+
+.project-heading {
+    font-family: var(--heading-font);
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 800;
+    line-height: 0.8;
+    margin-bottom: 20px;
+    text-transform: lowercase;
+}
+
+.work-img-small {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+}
+
+.work-heading {
+    font-family: var(--heading-font);
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 800;
+    line-height: 0.85;
+    margin: 30px 0 20px;
+    text-transform: lowercase;
+}
+
+.experience-item h3 {
+    font-family: var(--heading-font);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.experience-item p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.side-img-container {
+    flex: 1;
+    position: relative;
+}
+
+.side-img {
+    width: 100%;
+    max-height: 60vh;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+}
+
+.black-box-overlay {
+    position: absolute;
+    background-color: #1a1a1a;
+    z-index: 1;
+}
+
+
+.box-intro { top: -60px; left: -40px; width: 100%; height: 120px; }
+.box-personal { top: -80px; right: -30px; width: 80px; height: 180px; }
+.box-skills { top: -40px; left: 80px; width: 250px; height: 150px; }
+
+.btn-premium {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 20px;
+}
+
+.btn-premium:hover {
+    background-color: #333;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.intro-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding-top: 20px;
+}
+
